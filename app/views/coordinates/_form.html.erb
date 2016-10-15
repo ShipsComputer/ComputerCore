@@ -1,10 +1,10 @@
-<%= form_for(vessel_coordinate) do |f| %>
-  <% if vessel_coordinate.errors.any? %>
+<%= form_for(coordinate) do |f| %>
+  <% if coordinate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(vessel_coordinate.errors.count, "error") %> prohibited this vessel_coordinate from being saved:</h2>
+      <h2><%= pluralize(coordinate.errors.count, "error") %> prohibited this coordinate from being saved:</h2>
 
       <ul>
-      <% vessel_coordinate.errors.full_messages.each do |message| %>
+      <% coordinate.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :latitude %><br>
-    <%= f.text_field :latitude, value: @vessel_coordinate.try(:lat) %>
+    <%= f.text_field :latitude, value: @coordinate.try(:lat) %>
   </div>
 
   <div class="field">
     <%= f.label :longitude %><br>
-    <%= f.text_field :longitude, value: @vessel_coordinate.try(:lon) %>
+    <%= f.text_field :longitude, value: @coordinate.try(:lon) %>
   </div>
 
   <div class="field">
