@@ -1,4 +1,4 @@
-class VesselCoordinate < ApplicationRecord
+class Coordinate < ApplicationRecord
   attr_accessor :longitude, :latitude
 
   belongs_to :sensor_array

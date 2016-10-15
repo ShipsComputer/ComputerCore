@@ -16,16 +16,7 @@ ActiveRecord::Schema.define(version: 20161015171718) do
   enable_extension "plpgsql"
   enable_extension "postgis"
 
-  create_table "sensor_arrays", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "vessel_id"
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["vessel_id"], name: "index_sensor_arrays_on_vessel_id", using: :btree
-  end
-
-  create_table "vessel_coordinates", force: :cascade do |t|
+  create_table "coordinates", force: :cascade do |t|
     t.integer   "sensor_array_id"
     t.geography "point",             limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.float     "point_accuracy"
@@ -36,7 +27,16 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.datetime  "timestamp"
     t.datetime  "created_at",                                                                 null: false
     t.datetime  "updated_at",                                                                 null: false
-    t.index ["sensor_array_id"], name: "index_vessel_coordinates_on_sensor_array_id", using: :btree
+    t.index ["sensor_array_id"], name: "index_coordinates_on_sensor_array_id", using: :btree
+  end
+
+  create_table "sensor_arrays", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "vessel_id"
+    t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vessel_id"], name: "index_sensor_arrays_on_vessel_id", using: :btree
   end
 
   create_table "vessels", force: :cascade do |t|
@@ -45,6 +45,6 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "coordinates", "sensor_arrays"
   add_foreign_key "sensor_arrays", "vessels"
-  add_foreign_key "vessel_coordinates", "sensor_arrays"
 end

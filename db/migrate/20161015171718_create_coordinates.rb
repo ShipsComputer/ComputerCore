@@ -1,6 +1,6 @@
-class CreateVesselCoordinates < ActiveRecord::Migration[5.0]
+class CreateCoordinates < ActiveRecord::Migration[5.0]
   def change
-    create_table :vessel_coordinates do |t|
+    create_table :coordinates do |t|
       t.belongs_to :sensor_array, foreign_key: true
       t.geography :point, limit: {:srid=>4326, :type=>"point", :geographic=>true}
       t.float :point_accuracy

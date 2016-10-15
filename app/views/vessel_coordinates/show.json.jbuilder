@@ -1,1 +1,0 @@
-json.partial! "vessel_coordinates/vessel_coordinate", vessel_coordinate: @vessel_coordinate

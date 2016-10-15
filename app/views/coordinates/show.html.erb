@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sensor array:</strong>
+  <%= @coordinate.sensor_array %>
+</p>
+
+<p>
+  <strong>Vessel:</strong>
+  <%= @coordinate.sensor_array.vessel %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @coordinate.lat %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @coordinate.lon %>
+</p>
+
+<p>
+  <strong>Point accuracy:</strong>
+  <%= @coordinate.point_accuracy %>
+</p>
+
+<p>
+  <strong>Heading:</strong>
+  <%= @coordinate.heading %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @coordinate.speed %>
+</p>
+
+<p>
+  <strong>Altitude:</strong>
+  <%= @coordinate.altitude %>
+</p>
+
+<p>
+  <strong>Altitude accuracy:</strong>
+  <%= @coordinate.altitude_accuracy %>
+</p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @coordinate.timestamp %>
+</p>
+
+<%= link_to 'Edit', edit_coordinate_path(@coordinate) %> |
+<%= link_to 'Back', coordinates_path %>

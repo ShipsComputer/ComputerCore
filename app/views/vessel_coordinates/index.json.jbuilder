@@ -1,1 +1,0 @@
-json.array! @vessel_coordinates, partial: 'vessel_coordinates/vessel_coordinate', as: :vessel_coordinate
