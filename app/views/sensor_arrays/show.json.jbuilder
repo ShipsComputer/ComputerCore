@@ -1,0 +1,1 @@
+json.partial! "sensor_arrays/sensor_array", sensor_array: @sensor_array

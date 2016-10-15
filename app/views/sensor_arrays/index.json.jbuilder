@@ -1,0 +1,1 @@
+json.array! @sensor_arrays, partial: 'sensor_arrays/sensor_array', as: :sensor_array

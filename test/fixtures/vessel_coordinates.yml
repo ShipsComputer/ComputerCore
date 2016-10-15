@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sensor_array: one
+  vessel: one
+  point: 
+  point_accuracy: 1.5
+  heading: 1.5
+  speed: 1.5
+  altitude: 1.5
+  altitude_accuracy: 1.5
+  timestamp: 2016-10-15 13:17:19
+
+two:
+  sensor_array: two
+  vessel: two
+  point: 
+  point_accuracy: 1.5
+  heading: 1.5
+  speed: 1.5
+  altitude: 1.5
+  altitude_accuracy: 1.5
+  timestamp: 2016-10-15 13:17:19

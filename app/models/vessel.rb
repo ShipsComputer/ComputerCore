@@ -1,0 +1,2 @@
+class Vessel < ApplicationRecord
+end

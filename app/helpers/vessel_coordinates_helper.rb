@@ -1,0 +1,2 @@
+module VesselCoordinatesHelper
+end

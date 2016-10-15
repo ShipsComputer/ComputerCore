@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sensor_array.name %>
+</p>
+
+<p>
+  <strong>Vessel:</strong>
+  <%= @sensor_array.vessel %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @sensor_array.location %>
+</p>
+
+<%= link_to 'Edit', edit_sensor_array_path(@sensor_array) %> |
+<%= link_to 'Back', sensor_arrays_path %>

@@ -1,0 +1,62 @@
+<%= form_for(vessel_coordinate) do |f| %>
+  <% if vessel_coordinate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vessel_coordinate.errors.count, "error") %> prohibited this vessel_coordinate from being saved:</h2>
+
+      <ul>
+      <% vessel_coordinate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sensor_array_id %>
+    <%= f.text_field :sensor_array_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vessel_id %>
+    <%= f.text_field :vessel_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :point %>
+    <%= f.text_field :point %>
+  </div>
+
+  <div class="field">
+    <%= f.label :point_accuracy %>
+    <%= f.text_field :point_accuracy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :heading %>
+    <%= f.text_field :heading %>
+  </div>
+
+  <div class="field">
+    <%= f.label :speed %>
+    <%= f.text_field :speed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :altitude %>
+    <%= f.text_field :altitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :altitude_accuracy %>
+    <%= f.text_field :altitude_accuracy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timestamp %>
+    <%= f.datetime_select :timestamp %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
