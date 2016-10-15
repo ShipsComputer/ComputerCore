@@ -1,0 +1,31 @@
+default: &default
+  adapter: postgis
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  encoding: unicode
+  postgis_extension: postgis
+  schema_search_path: public,postgis
+  pool: 20
+  database: computer_core_development
+  username: computer_core_development
+  password: password
+  su_username: computer_core_development
+  su_password: password
+
+test:
+  <<: *default
+  encoding: unicode
+  postgis_extension: postgis
+  schema_search_path: public,postgis
+  pool: 5
+  database: computer_core_test
+  username: computer_core_test
+  password: password
+  su_username: computer_core_test
+  su_password: password
+
+production:
+  url: <%= ENV['DATABASE_URL'].sub(/^postgres/, "postgis") if ENV['DATABASE_URL'] %>
