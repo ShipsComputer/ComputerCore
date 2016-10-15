@@ -1,0 +1,32 @@
+<%= form_for(sensor_array) do |f| %>
+  <% if sensor_array.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sensor_array.errors.count, "error") %> prohibited this sensor_array from being saved:</h2>
+
+      <ul>
+      <% sensor_array.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vessel_id %>
+    <%= f.text_field :vessel_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

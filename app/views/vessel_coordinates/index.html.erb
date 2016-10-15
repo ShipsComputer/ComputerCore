@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vessel Coordinates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sensor array</th>
+      <th>Vessel</th>
+      <th>Point</th>
+      <th>Point accuracy</th>
+      <th>Heading</th>
+      <th>Speed</th>
+      <th>Altitude</th>
+      <th>Altitude accuracy</th>
+      <th>Timestamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vessel_coordinates.each do |vessel_coordinate| %>
+      <tr>
+        <td><%= vessel_coordinate.sensor_array %></td>
+        <td><%= vessel_coordinate.vessel %></td>
+        <td><%= vessel_coordinate.point %></td>
+        <td><%= vessel_coordinate.point_accuracy %></td>
+        <td><%= vessel_coordinate.heading %></td>
+        <td><%= vessel_coordinate.speed %></td>
+        <td><%= vessel_coordinate.altitude %></td>
+        <td><%= vessel_coordinate.altitude_accuracy %></td>
+        <td><%= vessel_coordinate.timestamp %></td>
+        <td><%= link_to 'Show', vessel_coordinate %></td>
+        <td><%= link_to 'Edit', edit_vessel_coordinate_path(vessel_coordinate) %></td>
+        <td><%= link_to 'Destroy', vessel_coordinate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vessel Coordinate', new_vessel_coordinate_path %>
