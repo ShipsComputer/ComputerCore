@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  vessel: one
-  location: MyString
+navigation:
+  name: Navigation
+  vessel: test_ship
+  location: Aft
 
-two:
-  name: MyString
-  vessel: two
-  location: MyString
+aft:
+  name: Aft
+  vessel: test_ship
+  location: Aft

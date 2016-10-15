@@ -22,7 +22,7 @@
     <% @vessel_coordinates.each do |vessel_coordinate| %>
       <tr>
         <td><%= vessel_coordinate.sensor_array %></td>
-        <td><%= vessel_coordinate.vessel %></td>
+        <td><%= vessel_coordinate.sensor_array.vessel %></td>
         <td><%= vessel_coordinate.point %></td>
         <td><%= vessel_coordinate.point_accuracy %></td>
         <td><%= vessel_coordinate.heading %></td>

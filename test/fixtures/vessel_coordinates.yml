@@ -1,23 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  sensor_array: one
-  vessel: one
-  point: 
-  point_accuracy: 1.5
-  heading: 1.5
-  speed: 1.5
-  altitude: 1.5
-  altitude_accuracy: 1.5
-  timestamp: 2016-10-15 13:17:19
-
-two:
-  sensor_array: two
-  vessel: two
-  point: 
-  point_accuracy: 1.5
-  heading: 1.5
-  speed: 1.5
-  altitude: 1.5
-  altitude_accuracy: 1.5
-  timestamp: 2016-10-15 13:17:19
+  sensor_array: navigation
+  point: <%= RGeo::Geographic.simple_mercator_factory.point(45.4215 ,-75.6972) %>
+  point_accuracy: 8
+  heading: 0
+  speed: 10
+  altitude: 0
+  altitude_accuracy: 10
+  timestamp: 2016-01-01 12:00:00

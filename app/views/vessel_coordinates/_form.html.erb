@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :vessel_id %>
-    <%= f.text_field :vessel_id %>
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude, value: @vessel_coordinate.try(:lat) %>
   </div>
 
   <div class="field">
-    <%= f.label :point %>
-    <%= f.text_field :point %>
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude, value: @vessel_coordinate.try(:lon) %>
   </div>
 
   <div class="field">

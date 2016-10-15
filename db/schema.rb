@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20161015171718) do
 
   create_table "vessel_coordinates", force: :cascade do |t|
     t.integer   "sensor_array_id"
-    t.integer   "vessel_id"
     t.geography "point",             limit: {:srid=>4326, :type=>"point", :geographic=>true}
     t.float     "point_accuracy"
     t.float     "heading"
@@ -38,7 +37,6 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.datetime  "created_at",                                                                 null: false
     t.datetime  "updated_at",                                                                 null: false
     t.index ["sensor_array_id"], name: "index_vessel_coordinates_on_sensor_array_id", using: :btree
-    t.index ["vessel_id"], name: "index_vessel_coordinates_on_vessel_id", using: :btree
   end
 
   create_table "vessels", force: :cascade do |t|
@@ -49,5 +47,4 @@ ActiveRecord::Schema.define(version: 20161015171718) do
 
   add_foreign_key "sensor_arrays", "vessels"
   add_foreign_key "vessel_coordinates", "sensor_arrays"
-  add_foreign_key "vessel_coordinates", "vessels"
 end

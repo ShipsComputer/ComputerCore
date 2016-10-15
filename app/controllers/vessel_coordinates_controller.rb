@@ -69,6 +69,6 @@ class VesselCoordinatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vessel_coordinate_params
-      params.require(:vessel_coordinate).permit(:sensor_array_id, :vessel_id, :point, :point_accuracy, :heading, :speed, :altitude, :altitude_accuracy, :timestamp)
+      params.require(:vessel_coordinate).permit(:sensor_array_id, :latitude, :longitude, :point_accuracy, :heading, :speed, :altitude, :altitude_accuracy, :timestamp)
     end
 end

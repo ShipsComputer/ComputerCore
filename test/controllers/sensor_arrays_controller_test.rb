@@ -2,7 +2,8 @@ require 'test_helper'
 
 class SensorArraysControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @sensor_array = sensor_arrays(:one)
+    @sensor_array = sensor_arrays(:aft)
+    @vessel = vessels(:test_ship)
   end
 
   test "should get index" do
@@ -39,8 +40,10 @@ class SensorArraysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy sensor_array" do
+    senssor_array = @vessel.sensor_arrays.create!(name: 'sensor array to delete')
+
     assert_difference('SensorArray.count', -1) do
-      delete sensor_array_url(@sensor_array)
+      delete sensor_array_url(senssor_array)
     end
 
     assert_redirected_to sensor_arrays_url

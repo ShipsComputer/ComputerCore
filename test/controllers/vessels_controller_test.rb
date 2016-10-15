@@ -2,7 +2,7 @@ require 'test_helper'
 
 class VesselsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @vessel = vessels(:one)
+    @vessel = vessels(:test_ship)
   end
 
   test "should get index" do
@@ -39,8 +39,10 @@ class VesselsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy vessel" do
+    vessel = Vessel.create!(name: 'Vessel to delete')
+
     assert_difference('Vessel.count', -1) do
-      delete vessel_url(@vessel)
+      delete vessel_url(vessel)
     end
 
     assert_redirected_to vessels_url

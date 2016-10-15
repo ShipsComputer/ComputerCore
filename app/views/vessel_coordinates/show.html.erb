@@ -7,12 +7,17 @@
 
 <p>
   <strong>Vessel:</strong>
-  <%= @vessel_coordinate.vessel %>
+  <%= @vessel_coordinate.sensor_array.vessel %>
 </p>
 
 <p>
-  <strong>Point:</strong>
-  <%= @vessel_coordinate.point %>
+  <strong>Latitude:</strong>
+  <%= @vessel_coordinate.lat %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @vessel_coordinate.lon %>
 </p>
 
 <p>
