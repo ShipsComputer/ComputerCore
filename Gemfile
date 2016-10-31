@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'validates_timeliness'
 
+gem "graphql"
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
