@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Vessel</th>
+      <th>Craft</th>
       <th>Location</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @sensor_arrays.each do |sensor_array| %>
       <tr>
         <td><%= sensor_array.name %></td>
-        <td><%= sensor_array.vessel %></td>
+        <td><%= sensor_array.craft %></td>
         <td><%= sensor_array.location %></td>
         <td><%= link_to 'Show', sensor_array %></td>
         <td><%= link_to 'Edit', edit_sensor_array_path(sensor_array) %></td>

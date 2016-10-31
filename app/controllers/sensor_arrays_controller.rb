@@ -69,6 +69,6 @@ class SensorArraysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_array_params
-      params.require(:sensor_array).permit(:name, :vessel_id, :location)
+      params.require(:sensor_array).permit(:name, :craft_id, :location)
     end
 end

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Sensor array</th>
-      <th>Vessel</th>
+      <th>Craft</th>
       <th>Point</th>
       <th>Point accuracy</th>
       <th>Heading</th>
@@ -22,7 +22,7 @@
     <% @coordinates.each do |coordinate| %>
       <tr>
         <td><%= coordinate.sensor_array %></td>
-        <td><%= coordinate.sensor_array.vessel %></td>
+        <td><%= coordinate.sensor_array.craft %></td>
         <td><%= coordinate.point %></td>
         <td><%= coordinate.point_accuracy %></td>
         <td><%= coordinate.heading %></td>

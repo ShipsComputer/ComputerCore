@@ -38,7 +38,7 @@ class Coordinate < ApplicationRecord
     self.point.longitude if self.point
   end
 
-  def vessel
-    self.sensor_array.vessel
+  def craft
+    self.sensor_array.craft
   end
 end

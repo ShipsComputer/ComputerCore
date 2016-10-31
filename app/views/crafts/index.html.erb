@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crafts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crafts.each do |craft| %>
+      <tr>
+        <td><%= craft.name %></td>
+        <td><%= link_to 'Show', craft %></td>
+        <td><%= link_to 'Edit', edit_craft_path(craft) %></td>
+        <td><%= link_to 'Destroy', craft, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Craft', new_craft_path %>

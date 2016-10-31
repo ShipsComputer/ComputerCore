@@ -28,7 +28,7 @@ class CoordinatesController < ApplicationController
 
     respond_to do |format|
       if @coordinate.save
-        format.html { redirect_to @coordinate, notice: 'Vessel coordinate was successfully created.' }
+        format.html { redirect_to @coordinate, notice: 'Craft coordinate was successfully created.' }
         format.json { render :show, status: :created, location: @coordinate }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CoordinatesController < ApplicationController
   def update
     respond_to do |format|
       if @coordinate.update(coordinate_params)
-        format.html { redirect_to @coordinate, notice: 'Vessel coordinate was successfully updated.' }
+        format.html { redirect_to @coordinate, notice: 'Craft coordinate was successfully updated.' }
         format.json { render :show, status: :ok, location: @coordinate }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CoordinatesController < ApplicationController
   def destroy
     @coordinate.destroy
     respond_to do |format|
-      format.html { redirect_to coordinates_url, notice: 'Vessel coordinate was successfully destroyed.' }
+      format.html { redirect_to coordinates_url, notice: 'Craft coordinate was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

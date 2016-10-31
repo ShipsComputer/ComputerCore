@@ -1,2 +1,0 @@
-module VesselsHelper
-end

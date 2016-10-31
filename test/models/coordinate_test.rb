@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CoordinateTest < ActiveSupport::TestCase
   setup do
-    @vessel = vessels(:test_ship)
+    @craft = crafts(:test_ship)
     @sensor_array = sensor_arrays(:navigation)
   end
 

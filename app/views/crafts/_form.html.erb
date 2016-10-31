@@ -1,10 +1,10 @@
-<%= form_for(vessel) do |f| %>
-  <% if vessel.errors.any? %>
+<%= form_for(craft) do |f| %>
+  <% if craft.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(vessel.errors.count, "error") %> prohibited this vessel from being saved:</h2>
+      <h2><%= pluralize(craft.errors.count, "error") %> prohibited this craft from being saved:</h2>
 
       <ul>
-      <% vessel.errors.full_messages.each do |message| %>
+      <% craft.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

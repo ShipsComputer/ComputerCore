@@ -2,10 +2,10 @@
 
 navigation:
   name: Navigation
-  vessel: test_ship
+  craft: test_ship
   location: Aft
 
 aft:
   name: Aft
-  vessel: test_ship
+  craft: test_ship
   location: Aft

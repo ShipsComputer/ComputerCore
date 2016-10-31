@@ -1,5 +1,5 @@
 class SensorArray < ApplicationRecord
-  belongs_to :vessel
-  validates :vessel_id, presence: true
+  belongs_to :craft
+  validates :craft_id, presence: true
   has_many :coordinates
 end
