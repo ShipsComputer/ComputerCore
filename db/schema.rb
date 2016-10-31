@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.index ["sensor_array_id"], name: "index_coordinates_on_sensor_array_id", using: :btree
   end
 
+  create_table "crafts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "sensor_arrays", force: :cascade do |t|
     t.string   "name"
     t.integer  "craft_id"
@@ -37,12 +43,6 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["craft_id"], name: "index_sensor_arrays_on_craft_id", using: :btree
-  end
-
-  create_table "crafts", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "coordinates", "sensor_arrays"
