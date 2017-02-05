@@ -19,6 +19,11 @@ gem 'validates_timeliness'
 
 gem "graphql"
 
+gem "nmea_plus"
+gem "rubyserial"
+
+gem 'whenever', :require => false
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
