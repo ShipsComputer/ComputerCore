@@ -16,6 +16,6 @@ namespace :navigation do
       rmc = msg if msg_type == 'GPRMC' && msg.checksum_ok?
     end
 
-    Craft.first.sensor_arrays.find_by(name: 'Navigation').coordinates.create(latitude: rmc.latitude, longitude: rmc.longitude, timestamp: rmc.utc_time)
+    Craft.first.sensor_arrays.find_by(name: 'Internal').coordinates.create(latitude: rmc.latitude, longitude: rmc.longitude, timestamp: rmc.utc_time)
   end
 end

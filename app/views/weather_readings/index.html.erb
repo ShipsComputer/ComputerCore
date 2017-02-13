@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Weather Readings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temp</th>
+      <th>Humidity</th>
+      <th>Pressure</th>
+      <th>Sensor array</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weather_readings.each do |weather_reading| %>
+      <tr>
+        <td><%= weather_reading.temp %></td>
+        <td><%= weather_reading.humidity %></td>
+        <td><%= weather_reading.pressure %></td>
+        <td><%= weather_reading.sensor_array %></td>
+        <td><%= link_to 'Show', weather_reading %></td>
+        <td><%= link_to 'Edit', edit_weather_reading_path(weather_reading) %></td>
+        <td><%= link_to 'Destroy', weather_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weather Reading', new_weather_reading_path %>

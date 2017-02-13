@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015171718) do
+ActiveRecord::Schema.define(version: 20170213002529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 20161015171718) do
     t.index ["craft_id"], name: "index_sensor_arrays_on_craft_id", using: :btree
   end
 
+  create_table "weather_readings", force: :cascade do |t|
+    t.float    "temp"
+    t.float    "humidity"
+    t.float    "pressure"
+    t.integer  "sensor_array_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["sensor_array_id"], name: "index_weather_readings_on_sensor_array_id", using: :btree
+  end
+
   add_foreign_key "coordinates", "sensor_arrays"
   add_foreign_key "sensor_arrays", "crafts"
+  add_foreign_key "weather_readings", "sensor_arrays"
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temp: 1.5
+  humidity: 1.5
+  pressure: 1.5
+  sensor_array: one
+
+two:
+  temp: 1.5
+  humidity: 1.5
+  pressure: 1.5
+  sensor_array: two

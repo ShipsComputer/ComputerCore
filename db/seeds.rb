@@ -7,5 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 cats_away = Craft.create({name: 'Cats Away'})
-nav_array = cats_away.sensor_arrays.create({name: 'Navigation'})
+nav_array = cats_away.sensor_arrays.create({name: 'Internal'})
 loc = nav_array.coordinates.create(latitude: 42, longitude: 24, timestamp: DateTime.now)

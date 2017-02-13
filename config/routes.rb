@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weather_readings
   resources :coordinates
   resources :sensor_arrays
   resources :crafts
