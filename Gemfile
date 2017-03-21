@@ -22,11 +22,14 @@ gem "graphql"
 gem "nmea_plus"
 gem "rubyserial"
 
+gem "gstatsat"
+
 gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
+  gem 'rb-readline'
 end
 
 group :development do

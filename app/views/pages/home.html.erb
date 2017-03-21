@@ -87,12 +87,12 @@
         </div>
         <!--First Button Group-->
         <div class="wrapper flexh button-wrap">
-            <div class="button bg-blue-3 left"></div>
-            <div class="button bg-blue-4"></div>
-            <div class="button bg-green-4 left"></div>
+            <div class="button bg-blue-1 left" data-label="Latitude: <%= @current_coordinates.lat %>"></div>
+            <div class="button bg-blue-2" data-label="longitude: <%= @current_coordinates.lon %>"></div>
+            <div class="button bg-green-4 left" data-label="Elevation: <%= @bearing.elevation %>"></div>
+            <div class="button bg-green-2" data-label="Azimuth: <%= @bearing.azimuth %>"></div>
+            <div class="button bg-green-3 left"></div>
             <div class="button bg-blue-2"></div>
-            <div class="button bg-green-4 left"></div>
-            <div class="button bg-green-2"></div>
         </div>
         <!--Column Spacer-->
         <div class="wrapper" style="max-height: 190px; flex: 4;"></div>
