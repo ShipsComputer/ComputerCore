@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgis
+  encoding: unicode
+  pool: 5
+  database: computercore
+  host: db
+  user: postgres
+  password:
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

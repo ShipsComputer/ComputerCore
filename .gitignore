@@ -20,8 +20,4 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore config files
-/config/database.yml
-/config/secrets.yml
-
 *.DS_Store
