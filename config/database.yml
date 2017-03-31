@@ -9,9 +9,11 @@ default: &default
 
 development:
   <<: *default
+  database: computercore_dev
 
 test:
   <<: *default
+  database: computercore_test
 
 production:
   <<: *default

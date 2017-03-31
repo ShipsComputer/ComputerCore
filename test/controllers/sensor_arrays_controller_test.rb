@@ -18,7 +18,7 @@ class SensorArraysControllerTest < ActionDispatch::IntegrationTest
 
   test "should create sensor_array" do
     assert_difference('SensorArray.count') do
-      post sensor_arrays_url, params: { sensor_array: { location: @sensor_array.location, name: @sensor_array.name, craft_id: @sensor_array.craft_id } }
+      post sensor_arrays_url, params: { sensor_array: { location: @sensor_array.location, name: @sensor_array.name, craft_id: @sensor_array.craft_id, handle: @sensor_array.handle } }
     end
 
     assert_redirected_to sensor_array_url(SensorArray.last)
@@ -35,7 +35,7 @@ class SensorArraysControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update sensor_array" do
-    patch sensor_array_url(@sensor_array), params: { sensor_array: { location: @sensor_array.location, name: @sensor_array.name, craft_id: @sensor_array.craft_id } }
+    patch sensor_array_url(@sensor_array), params: { sensor_array: { location: @sensor_array.location, name: @sensor_array.name, craft_id: @sensor_array.craft_id, handle: @sensor_array.handle } }
     assert_redirected_to sensor_array_url(@sensor_array)
   end
 

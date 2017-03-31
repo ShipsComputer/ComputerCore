@@ -2,3 +2,4 @@
 
 test_ship:
   name: Test Ship
+  handle: test_ship

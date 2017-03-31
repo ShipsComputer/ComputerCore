@@ -1,0 +1,12 @@
+json.id                @coordinate.id
+json.latitude          @coordinate.point.latitude
+json.longitude         @coordinate.point.longitude
+json.point_accuracy    @coordinate.point_accuracy
+json.altitude          @coordinate.altitude
+json.altitude_accuracy @coordinate.altitude_accuracy
+json.speed             @coordinate.speed
+json.heading           @coordinate.heading
+json.timestamp         @coordinate.timestamp
+json.sensor_array      @coordinate.sensor_array.name
+json.created_at        @coordinate.created_at
+json.updated_at        @coordinate.updated_at

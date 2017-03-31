@@ -4,10 +4,10 @@ one:
   temp: 1.5
   humidity: 1.5
   pressure: 1.5
-  sensor_array: one
+  sensor_array: aft
 
 two:
   temp: 1.5
   humidity: 1.5
   pressure: 1.5
-  sensor_array: two
+  sensor_array: aft

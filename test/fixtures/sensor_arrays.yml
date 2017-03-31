@@ -4,8 +4,10 @@ navigation:
   name: Navigation
   craft: test_ship
   location: Aft
+  handle: navigation
 
 aft:
   name: Aft
   craft: test_ship
   location: Aft
+  handle: aft
