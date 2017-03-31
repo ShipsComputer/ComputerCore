@@ -2,13 +2,10 @@
 
 Computer Core is the central rails app for collecting and processing data from sensor arrays.
 
-## Update Server
+## Docker
 
-```
-$ git pull
-$ rake db:migrate RAILS_ENV=production
-```
+`docker-compose build`
 
-## Update schedule
+`docker-compose up`
 
-`$ whenever --update-crontab`
+`docker-compose run web rake db:setup`
