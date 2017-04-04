@@ -15,7 +15,7 @@ Computer Core is the central rails app for collecting and processing data from s
 Get required packages
 ```
 sudo apt-get update
-sudo apt-get install ruby ruby-dev nginx-full libpq-dev git postgresql git -y
+sudo apt-get install ruby ruby-dev libpq-dev git postgresql postgis -y
 ```
 
 Clone ComputerCore
@@ -48,7 +48,7 @@ Setup database
 `bundle exec rake db:setup RAILS_ENV=production`
 
 Run server
-`bundle exec rails server -e production -p 80`
+`SECRET_KEY_BASE='foobarbaz' bundle exec rails s -e production -p 80`
 
 ## API
 
