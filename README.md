@@ -5,9 +5,19 @@ Computer Core is the central rails app for collecting and processing data from s
 ## Development
 
 `createdb computer_core_development`
-`psql -c "CREATE USER computer_core_development WITH PASSWORD 'password';"`
-`psql -c "GRANT ALL PRIVILEGES ON DATABASE "computer_core_development" to computer_core_development;"`
+
+`sudo -u postgres psql`
+
+```
+CREATE DATABASE computer_core_development;
+CREATE USER computer_core_development WITH PASSWORD 'password';
+ALTER USER computer_core_development WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "computer_core_development" to computer_core_development;
+\q
+```
+
 `bundle exec rake db:setup`
+
 `bundle exec rails server`
 
 ## Production on a Pi
@@ -19,6 +29,7 @@ sudo apt-get install ruby ruby-dev libpq-dev git postgresql postgis -y
 ```
 
 Clone ComputerCore
+
 `git clone https://github.com/ShipsComputer/ComputerCore.git && cd ComputerCore`
 
 Install rvm and set version
@@ -45,9 +56,11 @@ bundle install
 ```
 
 Setup database
+
 `bundle exec rake db:setup RAILS_ENV=production`
 
 Run server
+
 `SECRET_KEY_BASE='foobarbaz' bundle exec rails s -e production -p 80`
 
 ## API
