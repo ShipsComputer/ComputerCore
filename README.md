@@ -2,23 +2,53 @@
 
 Computer Core is the central rails app for collecting and processing data from sensor arrays.
 
-## Docker
+## Development
 
-`docker-compose build`
+`createdb computer_core_development`
+`psql -c "CREATE USER computer_core_development WITH PASSWORD 'password';"`
+`psql -c "GRANT ALL PRIVILEGES ON DATABASE "computer_core_development" to computer_core_development;"`
+`bundle exec rake db:setup`
+`bundle exec rails server`
 
-`docker-compose run web rake db:setup`
+## Production on a Pi
 
-`docker-compose up`
+Get required packages
+```
+sudo apt-get update
+sudo apt-get install ruby ruby-dev nginx-full libpq-dev git postgresql git -y
+```
 
-## Production
+Clone ComputerCore
+`git clone https://github.com/ShipsComputer/ComputerCore.git && cd ComputerCore`
 
-`rm tmp/pids/server.pid || true && docker-compose -f production.yml up -d`
+Install rvm and set version
+```
+curl -L https://get.rvm.io | bash -s stable --ruby
+rvm install ruby-2.3.1
+```
 
-## Test
+Create Database
+`sudo -u postgres psql`
 
-`docker-compose run -e "RAILS_ENV=test" web rake db:create db:migrate`
+```
+CREATE DATABASE computer_core;
+CREATE USER computer_core WITH PASSWORD 'password';
+ALTER USER computer_core WITH SUPERUSER;
+GRANT ALL PRIVILEGES ON DATABASE "computer_core" to computer_core;
+\q
+```
 
-`docker-compose run -e "RAILS_ENV=test" web rake test`
+Bundle install
+```
+gem install bundle
+bundle install
+```
+
+Setup database
+`bundle exec rake db:setup RAILS_ENV=production`
+
+Run server
+`bundle exec rails server -e production -p 80`
 
 ## API
 

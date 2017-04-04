@@ -2,18 +2,22 @@ default: &default
   adapter: postgis
   encoding: unicode
   pool: 5
-  database: computercore
-  host: db
-  user: postgres
-  password:
+  host: localhost
 
 development:
   <<: *default
-  database: computercore_dev
+  database: computer_core_development
+  user: computer_core_development
+  password: password
 
 test:
   <<: *default
-  database: computercore_test
+  database: computer_core_test
+  user: computer_core_test
+  password: password
 
 production:
   <<: *default
+  database: computer_core
+  user: computer_core
+  password: password
