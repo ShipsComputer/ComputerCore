@@ -25,7 +25,8 @@ GRANT ALL PRIVILEGES ON DATABASE "computer_core_development" to computer_core_de
 Get required packages
 ```
 sudo apt-get update
-sudo apt-get install ruby ruby-dev libpq-dev git postgresql postgis -y
+sudo apt-get upgrade -y
+sudo apt-get install ruby ruby-dev libpq-dev git postgresql postgis nodejs -y
 ```
 
 Clone ComputerCore
@@ -35,6 +36,7 @@ Clone ComputerCore
 Install rvm and set version
 ```
 curl -L https://get.rvm.io | bash -s stable --ruby
+source /home/pi/.rvm/scripts/rvm
 rvm install ruby-2.3.1
 ```
 
@@ -61,7 +63,11 @@ Setup database
 
 Run server
 
-`SECRET_KEY_BASE='foobarbaz' bundle exec rails s -e production -p 80`
+`rvmsudo rails s -b 0.0.0.0 -p 80 -e production`
+
+Start server on boot
+
+`cd /home/pi/ComputerCore && rvmsudo rails server -b 0.0.0.0 -p 80 -e production &`
 
 ## API
 
