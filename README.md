@@ -63,11 +63,11 @@ Setup database
 
 Run server
 
-`rvmsudo rails s -b 0.0.0.0 -p 80 -e production`
+`rvmsudo env PORT=80 RAILS_ENV=production rails server -p 80 -b 0.0.0.0`
 
 Start server on boot
 
-`cd /home/pi/ComputerCore && rvmsudo rails server -b 0.0.0.0 -p 80 -e production &`
+`cd /home/pi/ComputerCore && rvmsudo env PORT=80 RAILS_ENV=production rails server -p 80 -b 0.0.0.0 &`
 
 ## API
 
