@@ -67,7 +67,11 @@ Run server
 
 Start server on boot
 
-`cd /home/pi/ComputerCore && rvmsudo env PORT=80 RAILS_ENV=production rails server -p 80 -b 0.0.0.0 &`
+`contrab -e`
+
+and add
+
+`@reboot /bin/bash -l -c 'cd /home/pi/ComputerCore/ && export rvmsudo_secure_path=1 && rvmsudo PORT=80 rails server -b 0.0.0.0 -p 80 -e production'`
 
 ## API
 

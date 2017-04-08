@@ -19,9 +19,6 @@ gem 'validates_timeliness'
 
 gem "graphql"
 
-gem "nmea_plus"
-gem "rubyserial"
-
 gem "gstatsat"
 
 gem 'whenever', :require => false
