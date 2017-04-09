@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WeatherReadingTest < ActiveSupport::TestCase
+class EnvironmentalReadingTypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

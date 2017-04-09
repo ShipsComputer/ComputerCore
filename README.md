@@ -85,3 +85,12 @@ curl \
   -F sensor_array=core_pi \
   -X POST http://localhost:3000/api/v1/coordinates
 ```
+
+### Create environmental reading
+
+```
+curl \
+  -F temp=25.5 \
+  -F sensor_array=core_pi \
+  -X POST http://localhost:3000/api/v1/environmental_readings
+```

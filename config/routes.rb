@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :environmental_readings
+  resources :environmental_reading_types
   resources :weather_readings
   resources :coordinates
   resources :sensor_arrays

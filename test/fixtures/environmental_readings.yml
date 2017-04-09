@@ -1,13 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  temp: 1.5
-  humidity: 1.5
-  pressure: 1.5
-  sensor_array: aft
-
-two:
-  temp: 1.5
-  humidity: 1.5
-  pressure: 1.5
+  reading: 25.5
+  environmental_reading_type: temperature
   sensor_array: aft

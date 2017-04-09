@@ -1,0 +1,1 @@
+json.array! @environmental_readings, partial: 'environmental_readings/environmental_reading', as: :environmental_reading

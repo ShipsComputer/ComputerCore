@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Environmental Reading Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Handle</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @environmental_reading_types.each do |environmental_reading_type| %>
+      <tr>
+        <td><%= environmental_reading_type.handle %></td>
+        <td><%= link_to 'Show', environmental_reading_type %></td>
+        <td><%= link_to 'Edit', edit_environmental_reading_type_path(environmental_reading_type) %></td>
+        <td><%= link_to 'Destroy', environmental_reading_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Environmental Reading Type', new_environmental_reading_type_path %>
