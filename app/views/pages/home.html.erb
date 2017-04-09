@@ -25,6 +25,9 @@
     <link rel="stylesheet" type="text/css" href="/lcarssdk/themes/theme_ussNotAffiliated.css">
 
     <%= stylesheet_link_tag "module.css" %>
+    <style>
+        iframe {height:100%;width:100%}
+    </style>
 
 </head>
 
@@ -89,8 +92,8 @@
         <div class="wrapper flexh button-wrap">
             <div class="button bg-blue-1 left" data-label="Latitude: <%= @current_coordinates.lat %>"></div>
             <div class="button bg-blue-2" data-label="longitude: <%= @current_coordinates.lon %>"></div>
-            <div class="button bg-green-4 left" data-label="Elevation: <%= @bearing.elevation %>"></div>
-            <div class="button bg-green-2" data-label="Azimuth: <%= @bearing.azimuth %>"></div>
+            <div class="button bg-green-4 left" data-label="Correct as of"></div>
+            <div class="button bg-green-2" data-label="<%= @current_coordinates.timestamp %>"></div>
             <div class="button bg-green-3 left"></div>
             <div class="button bg-blue-2"></div>
         </div>
@@ -98,8 +101,8 @@
         <div class="wrapper" style="max-height: 190px; flex: 4;"></div>
         <!--Second Button Group-->
         <div class="wrapper flexh button-wrap">
-            <div class="button bg-green-2 left"></div>
-            <div class="button bg-blue-2"></div>
+            <div class="button bg-green-2 left" data-label="Elevation: <%= @bearing.elevation %>"></div>
+            <div class="button bg-blue-2" data-label="Azimuth: <%= @bearing.azimuth %>"></div>
             <div class="button bg-blue-4 left"></div>
             <div class="button bg-green-2"></div>
             <div class="button bg-blue-1 left ra_g1"></div>
@@ -192,7 +195,11 @@
                     <div class="bar bg-green-1"></div>
                 </div>
                 <!--Body Content-->
-                <div class="wrapper content flexcv" style=" overflow:auto;"></div>
+                <div class="wrapper content flexcv" style=" overflow:auto;">
+                  <iframe src="http://shipscomputer:8080/styles/osm-bright/?vector#13/<%= @current_coordinates.lat %>/<%= @current_coordinates.lon %>">
+                      <p>iFrame not working</p>
+                  </iframe>
+                </div>
             </div>
         </div>
     </div>
