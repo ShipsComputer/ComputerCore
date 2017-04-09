@@ -16,5 +16,5 @@ while rmc.nil?
 end
 
 uri = URI('http://shipscomputer/api/v1/coordinates')
-res = Net::HTTP.post_form(uri, latitude: rmc.latitude, longitude: rmc.longitude, timestamp: rmc.utc_time, sensor_array_handle: 'core_pi')
+res = Net::HTTP.post_form(uri, latitude: rmc.latitude, longitude: rmc.longitude, timestamp: rmc.utc_time, sensor_array: 'core_pi')
 puts res.body

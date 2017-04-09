@@ -8,7 +8,7 @@ class Api::V1::CoordinatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create new coordinate" do
     assert_difference('Coordinate.count', 1) do
-      response = post '/api/v1/coordinates', params: { :latitude => 45.4215, :longitude => -75.6972, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array_handle: @sensor_array.handle }
+      response = post '/api/v1/coordinates', params: { :latitude => 45.4215, :longitude => -75.6972, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array: @sensor_array.handle }
     end
     body = JSON.parse(response.body)
     assert_response 201
@@ -20,7 +20,7 @@ class Api::V1::CoordinatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should fail with useful response because lat and long are out of bounds" do
     assert_no_difference('Coordinate.count') do
-      response = post '/api/v1/coordinates', params: { :latitude => 90.1, :longitude => -420.0, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array_handle: @sensor_array.handle }
+      response = post '/api/v1/coordinates', params: { :latitude => 90.1, :longitude => -420.0, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array: @sensor_array.handle }
     end
     body = JSON.parse(response.body)
     assert_response 422
@@ -36,16 +36,16 @@ class Api::V1::CoordinatesControllerTest < ActionDispatch::IntegrationTest
     body = JSON.parse(response.body)
     assert_response 422
 
-    assert_equal ["missing sensor array handle"], body['sensor_array_handle']
+    assert_equal ["missing sensor array"], body['sensor_array']
   end
 
   test "should fail with useful response because handle incorrect" do
     assert_no_difference('Coordinate.count') do
-      response = post '/api/v1/coordinates', params: { :latitude => 90.1, :longitude => -420.0, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array_handle: 'foo' }
+      response = post '/api/v1/coordinates', params: { :latitude => 90.1, :longitude => -420.0, :timestamp => Time.zone.parse('2016-01-01 00:00:00'), :format => :json, sensor_array: 'foo' }
     end
     body = JSON.parse(response.body)
     assert_response 422
 
-    assert_equal ["there is no sensor array handle 'foo'"], body['sensor_array_handle']
+    assert_equal ["there is no sensor array with 'foo' as a handle"], body['sensor_array']
   end
 end

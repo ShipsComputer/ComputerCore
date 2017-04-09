@@ -6,10 +6,10 @@ class Api::V1::CoordinatesController < ApplicationController
   end
 
   def create
-    return (render json: {sensor_array_handle: ["missing sensor array handle"]}, status: :unprocessable_entity) if params['sensor_array_handle'].blank?
+    return (render json: {sensor_array: ["missing sensor array"]}, status: :unprocessable_entity) if params['sensor_array'].blank?
 
-    @sensor_array = SensorArray.find_by(handle: params['sensor_array_handle'])
-    return (render json: {sensor_array_handle: ["there is no sensor array handle '#{params['sensor_array_handle']}'"]}, status: :unprocessable_entity) if @sensor_array.nil?
+    @sensor_array = SensorArray.find_by(handle: params['sensor_array'])
+    return (render json: {sensor_array: ["there is no sensor array with '#{params['sensor_array']}' as a handle"]}, status: :unprocessable_entity) if @sensor_array.nil?
 
     @coordinate = @sensor_array.coordinates.build(coordinate_params)
 
