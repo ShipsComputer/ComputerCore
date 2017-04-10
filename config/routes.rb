@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1, defaults: { format: :json } do
       resources :coordinates, :only => [:new, :create]
+      resources :environmental_readings, :only => [:new, :create]
     end
   end
 end
