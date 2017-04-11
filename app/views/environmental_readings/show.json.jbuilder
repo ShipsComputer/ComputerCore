@@ -1,1 +1,0 @@
-json.partial! "environmental_readings/environmental_reading", environmental_reading: @environmental_reading

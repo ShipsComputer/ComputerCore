@@ -37,22 +37,6 @@ ActiveRecord::Schema.define(version: 20170409194058) do
     t.string   "handle"
   end
 
-  create_table "environmental_reading_types", force: :cascade do |t|
-    t.string   "handle"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "environmental_readings", force: :cascade do |t|
-    t.float    "reading"
-    t.integer  "environmental_reading_type_id"
-    t.integer  "sensor_array_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.index ["environmental_reading_type_id"], name: "index_environmental_readings_on_environmental_reading_type_id", using: :btree
-    t.index ["sensor_array_id"], name: "index_environmental_readings_on_sensor_array_id", using: :btree
-  end
-
   create_table "sensor_arrays", force: :cascade do |t|
     t.string   "name"
     t.integer  "craft_id"
@@ -63,8 +47,24 @@ ActiveRecord::Schema.define(version: 20170409194058) do
     t.index ["craft_id"], name: "index_sensor_arrays_on_craft_id", using: :btree
   end
 
+  create_table "sensor_readings", force: :cascade do |t|
+    t.float    "reading"
+    t.integer  "sensor_type_id"
+    t.integer  "sensor_array_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["sensor_array_id"], name: "index_sensor_readings_on_sensor_array_id", using: :btree
+    t.index ["sensor_type_id"], name: "index_sensor_readings_on_sensor_type_id", using: :btree
+  end
+
+  create_table "sensor_types", force: :cascade do |t|
+    t.string   "handle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "coordinates", "sensor_arrays"
-  add_foreign_key "environmental_readings", "environmental_reading_types"
-  add_foreign_key "environmental_readings", "sensor_arrays"
   add_foreign_key "sensor_arrays", "crafts"
+  add_foreign_key "sensor_readings", "sensor_arrays"
+  add_foreign_key "sensor_readings", "sensor_types"
 end

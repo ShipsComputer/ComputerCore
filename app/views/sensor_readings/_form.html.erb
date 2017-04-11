@@ -1,0 +1,32 @@
+<%= form_for(sensor_reading) do |f| %>
+  <% if sensor_reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sensor_reading.errors.count, "error") %> prohibited this sensor_reading from being saved:</h2>
+
+      <ul>
+      <% sensor_reading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reading %>
+    <%= f.text_field :reading %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sensor_type_id %>
+    <%= f.text_field :sensor_type_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sensor_array_id %>
+    <%= f.text_field :sensor_array_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

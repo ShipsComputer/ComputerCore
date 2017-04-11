@@ -1,1 +1,0 @@
-json.partial! "environmental_reading_types/environmental_reading_type", environmental_reading_type: @environmental_reading_type

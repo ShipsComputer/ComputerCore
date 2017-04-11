@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reading: 25.5
+  sensor_type: temperature
+  sensor_array: aft

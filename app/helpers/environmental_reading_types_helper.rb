@@ -1,2 +1,0 @@
-module EnvironmentalReadingTypesHelper
-end
