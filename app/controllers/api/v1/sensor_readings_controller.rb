@@ -2,7 +2,7 @@ class Api::V1::SensorReadingsController < ApplicationController
   protect_from_forgery with: :null_session
 
   def new
-    @sensor = SensorReading.new
+    @sensor_readings = SensorReading.new
   end
 
   def create
@@ -18,12 +18,12 @@ class Api::V1::SensorReadingsController < ApplicationController
 
     included_sensor_types.each do |sensor_type_handle|
       sensor_type = SensorType.find_by(handle: sensor_type_handle)
-      sensor = @sensor_array.sensors.build(sensor_params(sensor_type))
+      sensor_readings = @sensor_array.sensor_readings.build(sensor_reading_params(sensor_type))
 
-      if sensor.save
-        @response[sensor.sensor_type.handle] = {status: 'saved', reading: sensor.reading}
+      if sensor_readings.save
+        @response[sensor_readings.sensor_type.handle] = {status: 'saved', reading: sensor_readings.reading}
       else
-        @response[sensor.sensor_type.handle] = {status: 'not saved', 'errors' => sensor.errors}
+        @response[sensor_readings.sensor_type.handle] = {status: 'not saved', 'errors' => sensor_readings.errors}
       end
     end
 
@@ -31,7 +31,7 @@ class Api::V1::SensorReadingsController < ApplicationController
   end
 
   private
-    def sensor_params(sensor_type)
+    def sensor_reading_params(sensor_type)
       input_params = params
       input_params[:reading] = params[sensor_type.handle]
       input_params[:sensor_array_id] = @sensor_array.id
