@@ -196,7 +196,7 @@
                 </div>
                 <!--Body Content-->
                 <div class="wrapper content flexcv" style=" overflow:auto;">
-                    <iframe src="http://<%= request.host %>:8080/#current/wind/surface/level/orthographic=/<%= @current_coordinates.lat %>,<%= @current_coordinates.lon %>,3000">
+                    <iframe src="http://<%= request.host %>:8080/#current/wind/surface/level/orthographic=<%= @current_coordinates.lon %>,<%= @current_coordinates.lat %>,3000">
                         <p>iFrame not working</p>
                     </iframe>
                 </div>
