@@ -23,6 +23,10 @@ gem "gstatsat"
 
 gem 'whenever', :require => false
 
+# script requirements
+gem 'nmea_plus'
+gem 'rubyserial'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry'
