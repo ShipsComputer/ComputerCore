@@ -196,9 +196,9 @@
                 </div>
                 <!--Body Content-->
                 <div class="wrapper content flexcv" style=" overflow:auto;">
-                  <iframe src="http://<%= request.host %>:8080/styles/osm-bright/?vector#13/<%= @current_coordinates.lat %>/<%= @current_coordinates.lon %>">
-                      <p>iFrame not working</p>
-                  </iframe>
+                    <iframe src="http://<%= request.host %>:8080/#current/wind/surface/level/orthographic=/<%= @current_coordinates.lat %>,<%= @current_coordinates.lon %>,3000">
+                        <p>iFrame not working</p>
+                    </iframe>
                 </div>
             </div>
         </div>
