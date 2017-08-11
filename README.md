@@ -67,7 +67,7 @@ Run server
 
 Start server on boot
 
-`contrab -e`
+`crontab -e`
 
 and add
 
